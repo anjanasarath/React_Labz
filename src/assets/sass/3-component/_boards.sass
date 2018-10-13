@@ -1,0 +1,104 @@
+/* Cards */
+.card-boards.hold
+	background: $blue
+	h3
+		color: $white !important
+	.option a
+		svg
+			color: $white !important
+		&:hover svg
+			color: $black !important
+.card-boards
+	@extend .wd-100
+	@include border-radius(2px)
+	background: $light-bg
+	.card-header
+		@extend .wd-100
+		padding: $p-10
+		padding-bottom: $p-0
+		h3
+			display: inline-block
+			color: $black
+			margin-top: $m-10
+			font-size: $font-r
+		.option
+			float: right
+			a
+				float: left
+				color: $black
+				display: block
+				height: 30px
+				width: 30px
+				text-align: center
+				vertical-align: middle
+				@include border-radius(50%)
+				svg
+					color: $black
+					height: 30px
+					vertical-align: middle
+				&:hover
+					background: $secondary-color
+		.dropdown-menu
+			top: auto
+			li
+				width: 100%
+				a
+					width: 100%
+					height: auto
+					border-radius: 0
+					text-align: left
+
+	.board-list
+		@extend .wd-100
+		padding: $p-10
+		color: $black
+		li
+			list-style: none
+			padding: $p-10
+			background: $white
+			@extend .wd-100
+			@include box-shadow($box-shadow-card)
+			border: 1px solid
+			border-color: $border
+			position: relative
+			margin-bottom: $m-10
+			.shared-users
+				width: 50%
+				float: left
+				img
+					height: 40px
+					@include border-radius(50%)
+			.shared-more
+				width: 50%
+				float: right
+				text-align: right
+				position: absolute
+				bottom: 10px
+				right: 10px
+				svg
+					height: 15px
+					color: $gray
+				span
+					color: $gray
+
+	.add-board
+		@extend .wd-100
+		@include box-shadow($box-shadow-card)
+		border: 1px solid
+		border-color: $border
+		margin-bottom: $m-10
+		text-align: center
+		background: $white
+		a
+			color: $gray
+			&:hover
+				color: $blue
+
+.board-link
+	a
+		@extend .wd-100
+		color: $black
+		font-size: $font-m
+		font-weight: $font-bold
+		&:hover
+			color: $blue

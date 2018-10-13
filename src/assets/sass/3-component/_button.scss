@@ -1,0 +1,146 @@
+// Componant: Dropdown
+// Updated styles for bootstrap dropdown
+
+.btn {
+	cursor: pointer;
+	font-size: $font-s;
+	padding: 8px $p-15;
+	margin-left: $m-10;
+	font-family: $font-btn;
+	font-weight: $font-bold;
+	@include border-radius(20px);
+	&:hover
+	{
+		box-shadow: none;
+	}
+	&:not([disabled]):not(.disabled):not(.btn-link):hover,
+	&:not([disabled]):not(.disabled):not(.btn-link):focus {
+		text-decoration: none;
+		transform: none;
+		box-shadow: none;
+	}
+	&[disabled] { cursor: not-allowed; }
+	.icon,
+	.fa {
+		font-size: 14px;
+		margin-right: 5px;
+		vertical-align: middle;
+	}	
+}
+
+/* default button */
+.default-btn{
+	background: $default;
+	color: $white;
+	text-transform: none;
+	border: 1px solid;
+	border-color: transparent;
+	&:hover{
+		background: darken($default, 10);
+		color: $white;
+		border: 1px solid;
+		border-color: $default;
+	}
+}
+
+.default-btn-border{
+	color: $default;
+	background: $white;
+	border: 1px solid;
+	border-color: $default;
+	text-transform: none;
+	&:hover{
+		background: $default;
+		color: $white;
+	}
+	&:focus{
+		background: $default;
+		color: $white;
+	}
+}
+
+
+.danger-btn{
+	color: $white;
+	background: $danger;
+	text-transform: none;
+	&:hover{
+		background: darken($danger, 10%);
+		color: $white;
+	}
+}
+
+
+.danger-btn-border{
+	color: $danger;
+	background: $white;
+	border: 1px solid;
+	border-color: $danger;
+	text-transform: none;
+	padding: $p-5;
+	line-height: normal;
+		i{
+			margin-right: 0 !important;
+		}
+	&:hover{
+		background: $danger;
+		color: $white !important;
+	}
+	&:focus{
+		color: $white !important;
+	}
+}
+
+.success-btn{
+	background: $green;
+	color: $white;
+	text-transform: none;
+	border: 1px solid;
+	border-color: transparent;
+	&:hover{
+		background: $white;
+		color: $green;
+		border: 1px solid;
+		border-color: $green;
+	}
+}
+
+.light-btn{
+	color: $half-black;
+	background: $light-bg;
+	border: 1px solid;
+	border-color: $border;
+	text-transform: none;
+	&:hover{
+		background: $mid-gray;
+		color: $black;
+	}
+}
+
+.svg-btn{
+	padding: $p-5 !important;
+	svg{
+		height: 13px;
+	}
+}
+
+.secondary-btn{
+	background: $teal;
+	color: $white;
+}
+
+.color-btn{
+	width: 20px;
+	height: 20px;
+	@include border-radius(50%);
+	padding: 0px;
+	text-align: center;
+	line-height: 20px;
+}
+.color-btn.active{
+	border: 2px solid $gray;
+}
+i.color-btn{
+	color: $white;
+	font-size: 10px;
+}

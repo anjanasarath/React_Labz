@@ -1,0 +1,28 @@
+.modal-backdrop
+    opacity: 0 !important
+
+.modal
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 1050
+    text-align: center
+
+.modal:before
+    content: ''
+    display: inline-block
+    height: 100%
+    vertical-align: middle
+    margin-right: -4px
+
+.modal-dialog.mini
+    min-width: 500px !important
+.modal-dialog
+    min-width: 950px
+    text-align: left
+    display: inline-block
+    vertical-align: middle
+    .btn
+        margin-left: $m-10

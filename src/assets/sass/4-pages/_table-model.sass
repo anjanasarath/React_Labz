@@ -1,0 +1,209 @@
+/* Table model */
+.table-model
+	padding: $p-5 $p-15 !important
+.column-list
+	@extend .wd-100
+	li
+		list-style-type: none
+		@extend .wd-100
+		position: relative
+		color: $black
+		padding: 8px 5px 0px 30px
+		font-size: $font-r
+
+/* pagination */
+.pagination
+	@extend .wd-100
+	margin: 10px 0
+	span
+		float: left
+		padding: $p-5
+		font-size: $font-s
+	input
+		float: left
+		max-width: 40px
+		line-height: 25px
+		margin-right: $m-5
+		padding: 0px 5px
+		border: 1px solid $border
+	.page-no
+		float: left		
+		button
+			float: left
+			background: $mid-gray
+			color: $black
+			height: 25px
+			font-size: $font-s
+			line-height: 25px
+			margin-left: $m-5
+			padding: 0px $p-10
+			border: 0
+			@include border-radius(3px)
+			box-shadow: none
+			&:hover
+				background: $teal
+				color: $white
+		.currentPage
+			background: $teal
+			color: $white		
+	.action-button
+		float: left
+		margin-left: $m-5		
+		button
+			@include border-radius(3px)
+			display: inline-block
+			background: $mid-gray
+			color: $black
+			height: 25px
+			font-size: $font-s
+			line-height: 25px
+			vertical-align: middle
+			padding: 0px $p-10
+			border: 0
+			box-shadow: none	
+
+.tdData
+	margin-bottom: 0px
+.table-page
+	.card-accordion
+		border-color: transparent
+	.filter
+		float: right
+		position: relative
+		input
+			margin-top: $m-10
+		.dropdownFilter
+			position: absolute
+			top: 40px
+			right: 0px
+			background: $white
+			min-width: 150px
+			z-index: 999
+			padding: $p-5
+			border: 1px solid $border
+			div
+				text-align: left
+		.dropdown
+			position: absolute
+			top: 30px
+			right: 0px
+			background: $white
+			min-width: 100%
+			z-index: 999
+			padding: $p-5
+			border: 1px solid $border
+	input[type="checkbox"]
+		display: inline-block
+		z-index: 99
+		margin-right: 5px	
+	.card-tab
+		padding: $p-10 $p-5
+		color: $black
+		// border-bottom: 1px solid $border
+		.card-option
+			@extend .wd-100
+			.right-arrow
+				float: right
+				cursor: pointer
+				i
+					font-size: $font-s
+		input[type="checkbox"]
+			display: block
+			z-index: 99
+			opacity: 1
+		span
+			float: left
+			padding-left: $p-20
+			padding-right: $p-5
+	.card-tab-content
+		@extend .wd-100
+		max-height: 100%
+		p
+			float: left
+			margin-bottom: 5px
+			padding-left: 20px
+			width: 100%
+			span
+				float: left
+				padding-left: 20px			
+.total-rows	
+	span
+		float: left
+		line-height: 30px
+		margin-right: $m-5
+		font-size: $font-s
+		margin-top: $m-10
+	input
+		border: 1px solid $border
+		margin-top: $m-10
+	.search-input-text
+		width: 50px
+		float: left
+		margin-right: $m-5
+		border: 1px solid $border
+.table-cell-headNull
+	width: 30px
+.check-td
+	width: 30px
+
+/* model */
+.drop-area
+	@extend .wd-100
+	border: 1px dashed $border
+	text-align: center
+	padding: $p-30
+	margin-top: $m-10
+	label
+		color: $gray
+		font-size: $font-m
+		font-weight: $font-bold
+		span
+			float: none
+			font-size: $font-r
+		svg
+			fill: $default
+	i
+		font-size: $font-xl
+	input[type="file"]
+		display: inline-block
+	.inputfile
+		width: 0.1px
+		height: 0.1px
+		opacity: 0
+		overflow: hidden
+		position: absolute
+		z-index: -1
+	inputfile + label
+		max-width: 80%
+		font-size: 1.25rem
+		font-weight: 700
+		text-overflow: ellipsis
+		white-space: nowrap
+		cursor: pointer
+		display: inline-block
+		overflow: hidden
+		padding: 0.625rem 1.25rem
+	inputfile + label svg
+		width: 1em
+		height: 1em
+		vertical-align: middle
+		fill: currentColor
+		margin-top: -0.25em
+		margin-right: 0.25em
+.progress-area
+	@extend .wd-100
+	margin-top: $m-10
+	p
+		display: inline-block
+		font-size: $font-r
+		margin-bottom: 0px
+	progress
+		min-width: 92%
+		float: left
+		background: $green
+		margin-top: 10px
+	.btn	
+		float: right
+		padding: $p-5 $p-10
+	i
+		margin-right: 0px !important

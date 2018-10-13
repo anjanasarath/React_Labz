@@ -1,0 +1,93 @@
+.c-node span{display: none;}
+/* Flowchart */
+#add-node.flowchart-container{ transform: scale(1);}
+.flowchart-container {position: relative;}
+.flowchart-operators-layer{ width: 100%; height: 100%; float: left;}
+.flowchart-links-layer, .flowchart-operators-layer, .flowchart-temporary-link-layer {position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; }
+.flowchart-operators-layer, .flowchart-temporary-link-layer {pointer-events: none; }
+.flowchart-temporary-link-layer {display: none; }
+.flowchart-link, .flowchart-operator {cursor: pointer; }
+.flowchart-operator-connector {position: relative; padding-top: 0px; padding-bottom: 0px; }
+.flowchart-operator-connector-label {font-size: small; opacity: 0; }
+.flowchart-operator-inputs .flowchart-operator-connector-label {margin-left: 5px; }
+.flowchart-operator-outputs .flowchart-operator-connector-label {text-align: right; margin-right: 5px; font-size: 12px; opacity: 0; }
+.flowchart-operator-connector-arrow {width: 0px; height: 0px; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 5px solid rgb(24, 150, 193); position: absolute; top: 5px; }
+.flowchart-operator-connector-small-arrow {width: 0px; height: 0px; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 5px solid transparent; /*rgb(100, 100, 100);*/ position: absolute; top: 5px; pointer-events: none; }
+.flowchart-operator-connector:hover .flowchart-operator-connector-arrow {border-left: 5px solid rgb(153, 153, 153); }
+.flowchart-operator-inputs .flowchart-operator-connector-arrow {left: -1px; }
+.flowchart-operator-outputs .flowchart-operator-connector-arrow {right: -6px; }
+.flowchart-operator-inputs .flowchart-operator-connector-small-arrow {left: -1px; }
+.flowchart-operator-outputs .flowchart-operator-connector-small-arrow {right: -6px; }
+.unselectable {-moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; /* Introduced in IE 10. See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/ */ -ms-user-select: none; user-select: none; }
+
+/* Default Operator */
+.flowchart-operator {width: auto; min-width: 200px; position: absolute; @include border-radius(3px); box-shadow: $box-shadow-icon; pointer-events: initial; }
+.flowchart-operator.hover {border-color: #ccc; }
+.flowchart-operator.selected {border-color: #0d5c8a; }
+.flowchart-operator .flowchart-operator-title {width: 100%; font-weight: bold; box-sizing: border-box;  height: auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; cursor: move; padding: $p-10; @include border-radius(3px 3px 0px 0px); color: $white; }
+.flowchart-operator .flowchart-operator-inputs-outputs {display: table; width: 100%; margin: 0px; padding: 0px; float: left; }
+.flowchart-operator .flowchart-operator-inputs, .flowchart-default-operator .flowchart-operator-outputs {display: table-cell; width: 10%; }
+.flowchart-operator-connector-set{ min-height: 20px;}
+.flowchart-operator .flowchart-operator-column{ display: table-cell; width: 80%; font-size: 12px;  vertical-align: middle;}
+
+/* Custom */
+.logic-container{width: 100%; height: 78vh; overflow: hidden; float: left; margin: 0px; position: relative;}
+.ui-state-default{ border: 1px dashed #d0f3ff; }
+.flowchart-operator-title input{ display: none; }
+#draggable-elements{float: left; width: 100%; position:relative; top: auto; left: auto;}
+#draggable-elements .navbar{ background: $white;}
+.drag-con{min-width: 5000px; min-height: 5000px; position: relative; background: #fbfbfb;}
+.txt-area{display: none; }
+.blk{display: block !important; }
+.dropped{width: 100%; float: left; min-height: 55vh; overflow: auto; position: relative; }
+/* .elements{float: left; width: 62px; height: 62px; padding: 10px; text-align: center; vertical-align: middle; margin-right: 20px; z-index: 999; background: #fff; padding: 10px; @include border-radius(50%); webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);} */
+.elements:hover{ -webkit-box-shadow: 0px 0px 20px 0px rgba(25,198,244, 0.5); -moz-box-shadow: 0px 0px 20px 0px rgba(25,198,244, 0.5);  box-shadow: 0px 0px 20px 0px rgba(25,198,244, 0.5);  }
+.full-container{ width: 100%; float: left; position: relative; }
+.btn-con{float: right; text-align: right; margin-bottom: 5px;}
+.add-link{ width: 35px; height: 35px; border: 0; color: $black; float: right; text-align: center; line-height: 35px; margin-left: 10px; background: $white;  @include border-radius(50%); cursor: pointer; @include box-shadow($box-shadow-icon);}
+.add-link i{ color: $black;}
+.add-link:hover{ color: $white; background: $white; @include box-shadow($box-shadow-default);}
+.add-link:hover i{color: $teal;}
+.operator-option{ position: absolute; width: 10px; height: 20px; top: 10px; right: 0px; font-size: 16px; font-weight: bold; cursor: pointer; color: $white; }
+.operator-edit{ position: absolute; width: 20px; height: 20px; top: 10px; right: 15px; font-size: 16px; font-weight: bold; cursor: pointer; z-index: 9; color: $white;}
+.comp-section{ width: 100%; float: left; padding: 10px; -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1); background: $white; margin-bottom: 10px;}
+.comp{height: 200px;}
+.node{ width: 100px; height: 100px; border: 1px solid #eaeaea; text-align: center; line-height: 100px; background: #fcfcfc; float: left;}
+.c-node{ 
+    float: right;
+    img{
+        height: 35px;
+        padding: $p-5;
+        border: 1px solid;
+        border-color: $border;
+    }
+}
+
+/* popout */
+.drawer{ width: 100%; color: #333; position: fixed; bottom: -22px; overflow: hidden; z-index: 99; left: 0px;  }
+.drawer-content{ width: 100%; height: 300px; background: #fcfcfc; text-align: center; border-top: 1px solid #eaeaea; padding: 10px;}
+.drawer-content textarea{ width: 100%; float: left; min-height: 200px; border: 1px solid #eaeaea; overflow: auto; padding: 10px;}
+.arrow{ width: 100%;  height: 20px; background: url(../img/arrow.png) no-repeat center top; cursor: pointer; }
+.drawer-content img{ width: 100px; height: 100px; @include border-radius(50%); border: 1px solid; border-color: $border;}
+
+/* minimap */
+#minimap #selectWin {
+    z-index: 9999;
+}
+#minimap #selectWin .selectionWin{
+    position: absolute;
+    background-color: white;
+    opacity: 0.4;
+    cursor: move;
+}
+#minimap, #minimap #selectWin, #minimap #miniview {
+    position: fixed;
+    bottom: 13px;
+    right: 15px;
+	overflow: hidden;
+	background: rgba(113,113,113,0.8);
+}
+#minimap .mainContainer{
+	transform-origin: left top auto !important;
+	background-color: #d2ddc6;
+}

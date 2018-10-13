@@ -1,0 +1,95 @@
+/* Links */
+.links a
+	margin-right: $m-30
+.link-default
+	position: relative
+	display: inline-block
+	color: $default
+	font-weight: $font-black
+	min-width: 100px
+	padding-right: 50px
+	&:after
+		content: ''
+		position: absolute
+		top: 0px
+		left: 0px
+		width: 0
+		height: 100%
+		background: url(../img/arrow.png) no-repeat right 0px bottom 4px
+		z-index: 1
+		transform-origin: left
+		transition: $width-transition
+	&:hover
+		color: darken($default, 10%)
+		&:after
+			width: 100%
+			z-index: 1
+	&:focus
+		color: darken($default, 20%)
+
+.link-default-previous
+	position: relative
+	display: inline-block
+	color: $blue
+	font-weight: $font-black
+	min-width: 100px
+	padding-left: 50px
+	&:before
+		content: ''
+		position: absolute
+		top: 0px
+		right: 0px
+		width: 0
+		height: 100%
+		background: url(../img/arrow-l.png) no-repeat left 0px bottom 4px
+		z-index: 1
+		transform-origin: right
+		transition: $width-transition
+	&:hover
+		color: darken($blue, 10%)
+		&:before
+			width: 100%
+			z-index: 1
+
+.link-m
+	font-size: $font-m
+.link-r
+	font-size: $font-r
+.link-s
+	font-size: $font-s
+
+.link-add
+	position: relative
+	display: inline-block
+	color: $blue
+	font-weight: $font-black
+	svg
+		height: 20px
+		float: left
+		color: $green
+		display: inline-block
+		margin-right: $m-5
+	&:hover
+		color: darken($blue, 10%)
+.link-done
+	position: relative
+	display: inline-block
+	color: $blue
+	font-weight: $font-black
+	&:hover
+		color: darken($blue,10%)
+	.checkmark
+		width: 30px
+		height: 30px
+		float: right
+		margin-left: $m-5
+		stroke-width: 4
+		stroke: $green
+		.checkmark__check
+			transform-origin: 50% 50%
+			stroke-dasharray: 48
+			stroke-dashoffset: 48
+			animation: $check-animation
+			@keyframes stroke
+				100%
+					stroke-dashoffset: 0

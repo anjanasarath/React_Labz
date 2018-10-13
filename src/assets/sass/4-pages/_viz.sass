@@ -1,0 +1,166 @@
+.section-nav
+    position: fixed
+    top: 50px
+    z-index: 99
+    right: 10px
+
+.title-fixed
+    position: fixed
+    top: 50px
+    z-index: 99
+    left: 10px
+    h1
+        height: 35px
+        border: 0
+        color: $black
+        float: right
+        font-size: $font-r
+        margin: 0px
+        padding: 0 $p-20
+        text-align: center
+        line-height: 35px
+        margin-left: 10px
+        background: $white !important
+        @include border-radius(30px)
+        cursor: pointer
+        @include box-shadow($box-shadow-icon)
+        &:hover
+            color: $default
+            background: $white
+            @include box-shadow($box-shadow-default)
+.model-content
+    position: relative
+
+.content-wrapper
+    padding-left: 240px
+.sidebar-collapse
+    .content-wrapper
+        padding-left: 0px !important    
+
+.search-content
+    @extend .wd-100
+    padding: $p-5
+    position: relative
+    label
+        margin-bottom: 0px
+        input
+            margin-bottom: 0px
+div[role=toolbar]
+    background-color: transparent !important
+    top: auto !important
+    right: -10px !important
+    bottom: 110px !important
+button[role=button]
+    color: $white !important
+    background: $white !important
+    border: 1px solid $border !important
+    color: $gray
+    width: 35px !important
+    height: 35px !important
+    line-height: 41px 
+    text-align: center
+    z-index: 9999
+    margin-top: 5px !important
+    @include border-radius(50%)
+    svg
+        height: 24px !important
+    &:hover, &:active, &:focus, &:visited
+        color: $white !important
+        fill: $teal !important
+        stroke: none
+div[role=navigation]
+    width: 30px
+    height: 30px
+    bottom: 13px !important
+    right: 5px !important
+    background: #fcfcfc
+    button[role=button]
+        position: fixed !important
+        bottom: 10px !important
+        right: 10px !important
+//     rect
+//         fill: none !important
+svg.card-svg
+    @include box-shadow($box-shadow-card)
+    border: 2px solid $teal
+.card-svg .svg-circle
+    stroke-width: 2px
+    stroke-opacity: 0.2
+    transition: all ease 0.5s
+    -webkit-transition: all ease 0.5s
+    -moz-transition: all ease 0.5s
+.card-svg:hover .svg-circle
+    stroke-opacity: 1 !important
+    transition: all ease 0.5s
+    -webkit-transition: all ease 0.5s
+    -moz-transition: all ease 0.5s
+.round
+    @include box-shadow($box-shadow-default)
+
+.shadow-round
+    filter: drop-shadow( 0 2px 1px black )
+.svg-font
+    font-weight: bold
+    color: $gray
+
+.svg-bg
+    height: 100vh !important
+    svg
+        height: 100vh   
+.svg-bg svg rect:only-of-type
+    fill: #fcfcfc
+.main-rect
+    border: 1px solid $border
+    @include box-shadow($box-shadow-default)
+.table-div
+    .card-tab-content
+        margin-top: $m-10
+    .form-checkbox
+        position: relative
+        top: 2px
+        left: 5px        
+        input[type="checkbox"]
+            opacity: 0 !important
+            cursor: pointer
+        label
+            padding: 0px 10px !important
+            span
+                padding-left: 10px !important
+    span
+        padding-left: 0px !important
+.table.table-div
+    .form-checkbox
+        top: 10px
+        left: 5px
+.svgpath:hover
+    stroke: $default   
+
+.table-name
+    font-size: $font-m
+    margin: 15px 0 0px 0
+    text-transform: capitalize
+
+
+/* Custom toolbar */
+.custom-toolbar
+    position: fixed
+    bottom: 120px
+    right: 10px
+    width: 42px
+    button
+        margin-bottom: 10px
+    //     width: 40px
+    //     height: 40px
+    //     @include border-radius(50%)
+    //     text-align: center
+    //     line-height: 40px
+    //     @include box-shadow($box-shadow-default)
+    //     border: 0
+
+.color-picked
+    width: 20px
+    height: 20px
+    @include border-radius(3px)
+    position: absolute
+    right: 0px
+    z-index: 999

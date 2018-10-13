@@ -1,0 +1,20 @@
+.drag-area
+    @wxtend .wd-100
+    .drag-list
+        @extend .wd-100
+        list-style: none
+        margin-top: $m-10
+        li
+            float: left
+            position: relative
+            width: 35px
+            height: 35px
+            line-height: 30px
+            @include border-radius(50%)
+            border: 1px solid $border
+            text-align: center
+            margin-right: $m-20                  
+            span
+                display: block
+                text-align: center
+                font-size: $font-xs

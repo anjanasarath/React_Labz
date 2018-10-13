@@ -1,0 +1,165 @@
+// Componant: Sidebar Nav
+
+.main-sidebar
+	position: absolute
+	top: 0px
+	left: 0px
+	padding-top: 30px
+	min-height: 100vh
+	width: 280px
+	z-index: 810
+	box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2)
+	transition: transform 0.3s ease-in-out, width 0.3s ease-in-out
+	background: $white
+
+@media (max-width: 767px)
+	.main-sidebar
+		padding-top: 40px 
+		transform: translate(-240px, 0)
+	.sidebar-open
+		.main-sidebar
+			transform: translate(0, 0)
+
+@media (min-width: 768px)
+	.sidebar-collapse
+		transition: all 0.5s ease
+		.main-sidebar
+			left: -280px
+			transform: translate(-280px, 0)
+
+.sidebar
+	@extend .wd-100
+	padding-bottom: 10px
+	font-size: 14px
+	overflow: hidden !important
+	.logo
+		img
+			height: 40px
+	.user-panel
+		position: relative
+		width: 100%
+		padding: 10px
+		margin-top: 20px
+		margin-bottom: 20px
+		overflow: hidden
+		white-space: nowrap
+		&:before
+			content: " "
+			display: table
+		&:after
+			content: " "
+			display: table
+			clear: both
+		>
+			.image > img
+				width: 100%
+				max-width: 45px
+				height: auto
+			.info
+				padding: 5px 5px 5px 15px
+				line-height: 1
+				position: absolute
+				left: 55px
+				>
+					p
+						margin-top: 2px
+						margin-bottom: 5px
+						font-family: $body-font
+						font-size: 17px
+					.designation
+						font-size: 12px
+.slimScrollDiv
+	overflow: visible !important
+.sidebar-menu
+	list-style: none
+	margin: 0
+	padding: 0
+	white-space: nowrap
+	overflow: hidden
+	&:hover
+		overflow: visible
+	> li
+		position: relative
+		margin: 0
+		padding: 0
+		> a
+			color: $white
+			padding: $p-5 $p-10
+			margin-bottom: 0px
+			display: block
+			position: relative
+			font-size: $font-s
+			i
+				margin-right: $m-10
+				margin-left: $m-5
+		.label, .badge
+			margin-top: 3px
+			margin-right: 5px
+	li
+		&.header
+			padding: 10px 25px 10px 15px
+			font-size: 12px
+			white-space: nowrap
+			overflow: hidden
+		> a > .fa-angle-right
+			width: auto
+			height: auto
+			position: absolute
+			right: 0
+			padding: 0
+			float: none
+			margin-right: 10px
+			margin-top: 3px
+			transition: all 0.3s ease
+		&.active >
+			a > .fa-angle-right
+				transform: rotate(90deg)
+				transform-origin: center
+			.treeview-menu
+				display: block
+	.treeview-menu
+		display: none
+		list-style: none
+		margin: 0
+		padding-left: 0px
+		padding-top: 0px
+		padding-bottom: 0px
+		.treeview-menu
+			padding-left: 40px
+			margin: 0px
+		> li
+			margin: 0
+			padding: 0px
+			> a
+				padding: 5px 5px 5px 35px
+				display: block
+				font-size: 12px
+				opacity: 0.9
+				position: relative
+				>
+					.fa-angle-left, .fa-angle-down
+						width: auto
+				>
+					i
+						&:first-of-type
+							margin-right:  $m-5
+
+		.treeview
+			.treeview-menu li
+				margin: 0px
+
+				> a
+					padding: 5px 5px 5px 15px
+
+.sidebar-toggle
+	background: transparent
+	color: $black
+	width: 30px
+	text-align: left
+	padding-right: 10px
+	&:active, &:focus
+		background: transparent
+	&:before
+		color: $black
+		font-size: $font-l
+		padding-right: 10px

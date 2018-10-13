@@ -1,0 +1,258 @@
+// UI COmponents
+.form-control
+	border: 0 !important
+	margin-bottom: $m-10
+	border-radius: 0
+	&:focus
+		border: 0 !important
+		background: $gray
+	&:visited
+		background: $white
+// Form inputs
+.form-group
+	margin-bottom: 0
+.form-group
+	position: relative
+	width: 100%
+	float: left
+	& + .form-group
+		margin-top: 10px
+	select
+		max-width: 100%
+		border: none
+		background-color: transparent
+		-webkit-appearance: none
+		-moz-appearance: none
+		appearance: none
+		&:active,
+		&:focus
+			outline: none
+			box-shadow: none
+		&:after
+			content: " "
+			position: absolute
+			top: 50%
+			margin-top: -5px
+			right: 5px
+			width: 0
+			height: 0
+			border-left: 5px solid transparent
+			border-right: 5px solid transparent
+			border-top: 5px solid $black
+.control-label
+	width: 100%
+	position: absolute
+	left: 0
+	top: 10px
+	color: #999
+	background-color: #fff
+	z-index: 10
+	transition: transform 150ms ease-out, font-size 150ms ease-out
+	.error
+		float: right
+.focused .control-label
+	transform: translateY(-125%)
+	font-size: .75em
+	color: $gray !important
+.form-control
+	color: $black
+	position: relative
+	padding: 12px 0px 5px 0
+	width: 100%
+	outline: 0
+	border: 0
+	box-shadow: 0 1px 0 0 #e5e5e5
+	transition: box-shadow 150ms ease-out
+	&:focus
+		box-shadow: 0 2px 0 0 $teal
+		background: $white
+		color: $black
+
+.form-control.filled
+	box-shadow: 0 2px 0 0 $success
+
+.form-holder
+	width: 100%
+	padding: $p-20
+	h2
+		color: $black
+		margin: $mv-10
+label
+	color: $half-black
+	font-weight: $font-regular
+	display: block
+	span
+		float: right
+		font-size: $font-s
+		svg
+			height: 15px
+			margin-top: 3px
+	.checkmark
+		width: 22px
+		height: 22px
+		float: right
+		stroke-width: 4
+		stroke: $green
+		.checkmark__check
+			transform-origin: 50% 50%
+			stroke-dasharray: 48
+			stroke-dashoffset: 48
+			animation: $check-animation
+			@keyframes stroke
+				100%
+					stroke-dashoffset: 0
+.input-text
+	width: 100%
+	display: block
+	@include border-radius(2px)
+	border: 1px solid
+	border-color: $input-border
+	padding: $p-10
+	font-size: $font-s
+	position: relative
+	margin-bottom: 0px
+	&::-webkit-input-placeholder
+		color: $gray
+	&::-moz-placeholder
+		color: $gray
+	&:-ms-input-placeholder
+		color: $gray
+	&:-moz-placeholder
+		color: $gray
+	&:focus
+		background-color: $half-white
+		outline: none
+.search-input-text
+	width: 100%
+	display: block
+	@include border-radius(2px)
+	border: 1px solid
+	border-color: $input-border
+	padding: $p-5 $p-10
+	font-size: $font-s
+	position: relative
+.inline-button
+	display: inline-block
+	position: absolute
+	background: transparent
+	border: 0
+	top: 10px
+	right: 20px
+	svg
+		width: 15px
+
+.icon-btn
+	position: absolute
+	top: 30px
+	right: 20px
+
+/* Drop down default */
+.dropdown-default
+	display: inline-block
+	color: $black
+	font-size: $font-r
+	font-weight: $font-bold
+	&:hover
+		color: $gray
+.dropdown-default-bg
+	display: inline-block
+	width: 100%
+	color: $gray
+	background: $light-bg
+	@include border-radius(2px)
+	border: 1px solid
+	border-color: $border
+	font-size: $font-s
+	font-weight: $font-medium
+	padding: $p-5 $p-10
+	i
+		margin: $ml-10
+		margin-top: $m-5
+		float: right
+	&:hover
+		color: $gray
+.dropdown-secondary
+	display: inline-block
+	color: $blue
+	font-size: $font-r
+	font-weight: $font-bold
+	svg
+		float: right
+	&:hover
+		color: darken( $blue, 30% )
+.dropdown-menu
+	border-color: $border
+	box-shadow: none
+	a
+		display: block
+		color: $black
+		padding: $p-5  $p-10
+		&:hover
+			background: $light-bg
+
+/* check box */
+.form-checkbox
+	label
+		float: left
+	label.text
+		float: left
+		margin-right: $m-10
+		&::before
+			display: inline-block
+
+/* Switch toggle */
+.switch
+	position: relative
+	display: inline-block
+	width: 50px
+	height: 28px
+	float: left
+	margin-left: $m-10
+	input
+		display: none
+	span
+		float: left
+.slider
+	position: absolute
+	cursor: pointer
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background-color: $white
+	border: 1px solid $border
+	-webkit-transition: .4s
+	transition: .4s
+
+	&:before
+		position: absolute
+		content: ""
+		height: 20px
+		width: 20px
+		left: 4px
+		bottom: 3px
+		background-color: white
+		border: 1px solid $border
+		-webkit-transition: .4s
+		transition: .4s
+
+
+input:checked + .slider
+	background-color: $blue
+
+input:focus + .slider
+	box-shadow: 0 0 1px $blue
+
+input:checked + .slider:before
+	-webkit-transform: translateX(20px)
+	-ms-transform: translateX(20px)
+	transform: translateX(20px)
+
+
+/* Rounded sliders */
+.slider.round
+	border-radius: 28px
+
+
+.slider.round:before
+	border-radius: 50%

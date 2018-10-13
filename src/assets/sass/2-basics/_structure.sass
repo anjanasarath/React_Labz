@@ -1,0 +1,35 @@
+// Page Structural CSS
+
+.wrapper
+	min-height: 100vh
+	position: static
+	&:before
+		content: " "
+		display: table
+	&:after
+		content: " "
+		clear: both
+
+.content-wrapper
+	width: 100%
+	float: left
+	height: 100%
+	z-index: 800
+	z-index: 820
+	padding: $p-0
+	padding-bottom: $p-10
+	transition: all 0.3s ease-in-out
+
+@media (min-width: 768px)
+	.sidebar-collapse .content-wrapper
+		margin-left: 0
+
+@media (max-width: 767px)
+	.content-wrapper
+		margin-left: 0
+	.sidebar-open .content-wrapper
+		transform: translate(240px, 0)
+
+@media (max-width: 480px)
+	.content-wrapper
+		padding: 10px

@@ -1,0 +1,120 @@
+/* Query panel */
+.text-area
+	@extend .wd-100
+	.query-status
+		@extend .wd-100
+		background: $light-bg
+		font-size: $font-s
+		padding: $p-5
+		svg
+			color: $green
+			height: 10px
+			fill: $green
+
+div.numberedtextarea-wrapper
+	position: relative
+
+div.numberedtextarea-wrapper textarea
+	display: block
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	border-color: $border
+	margin-bottom: $m-0
+
+div.numberedtextarea-line-numbers
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	width: 50px
+	border-right: 1px solid
+	border-color: $border
+	color: $black
+	overflow: hidden
+	background: $teal
+
+div.numberedtextarea-number
+	padding-right: 6px
+	text-align: right
+
+.query-list
+	@extend .wd-100
+	border: 1px solid
+	border-color: $border
+	.column-list
+		margin-bottom: 0px
+		li
+			@extend .wd-100
+			padding: $p-5 $p-10
+			font-size: $font-s
+			cursor: pointer
+			.form-checkbox label.text
+				margin-right: $m-0
+				margin-top: $m-5
+			.option a
+				line-height: 25px
+	.tab-panels
+		max-height: 395px
+		overflow: auto
+		@extend .wd-100
+	.tab-panel
+		padding: $p-0
+		@extend .wd-100
+		.card-accordion
+			border: 0
+			label:before
+				left: 5px
+			.form-checkbox
+				label:after
+					left: 10px
+			.tabhead
+				padding-left: 30px
+			.column-list
+				li
+					padding-left: 30px
+					padding-top: 12px
+		.tab-head
+			border: 0
+
+.result
+	@extend .wd-100
+	margin-top: $m-20
+	.result-head
+		@extend .wd-100
+		background: $light-bg
+		padding: $p-10
+		h5
+			margin: $m-0
+			display: inline-block
+	.result-content
+		@extend .wd-100
+		border: 1px solid
+		border-color: $border
+		padding: $p-10
+
+.tab-options
+	@extend .wd-100
+	position: relative
+	background: $light-bg
+	padding: $p-5
+	.form-checkbox
+		position: absolute
+		top: 8px
+		left: 10px
+
+.react-contextmenu-wrapper
+	@extend .wd-100
+.react-contextmenu
+	@include box-shadow($box-shadow-default)
+	z-index: 99999
+	background: $white	
+	.contextMenu
+		div
+			padding: $p-5
+			font-size: $font-s
+			cursor: pointer
+			&:hover
+				background: $default
+				color: $white

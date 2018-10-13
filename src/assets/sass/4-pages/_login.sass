@@ -1,0 +1,101 @@
+// Page: Login 
+
+.login-content
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	min-height: 100vh
+	background: url(../img/bg-login.jpg) no-repeat fixed
+	@include bg-cover(cover)
+
+.login-con
+	min-width: 420px	
+	@include border-radius(5px)
+	.logo
+		margin-bottom: 0px
+		color: $white
+		padding: 15px 0px
+		text-align: center
+		color: $teal
+		z-index: 999
+		h1
+			font-size: 25px
+			text-transform: uppercase
+			font-weight: 400
+	.register
+		min-height: 480px !important
+	.login-box
+		position: relative
+		min-width: 350px
+		min-height: 320px
+		padding-top: 0px
+		background-color: $white
+		box-shadow: $box-shadow-popup
+		perspective: 800px
+		transition: all 0.5s ease-in-out
+		.login-head
+			margin-bottom: 15px
+			text-align: left
+			font-size: 18px
+			
+		label
+			color: $black
+			font-size: $font-xs
+			img
+				float: right
+		.utility
+			display: flex
+			padding: 1px
+			justify-content: space-between
+			align-items: center
+			p
+				font-size: $font-xs
+			a
+				color: $teal
+				font-size: $font-s
+		.btn-container
+			margin-bottom: 0
+		.login-form, .forget-form
+			position: absolute
+			top: 20px
+			bottom: 0
+			left: 0
+			right: 0
+			padding: 40px
+			backface-visibility: hidden
+			-webkit-backface-visibility: hidden
+			transition: all 0.5s ease-in-out
+
+			.form-control
+				border: 2px solid
+				border-color: $border
+		.forget-form
+			opacity: 0
+			transform: rotateY(180deg)
+
+		&.flipped
+			min-height: 300px
+			.login-form
+				opacity: 0
+				transform: rotateY(-180deg)
+
+			.forget-form
+				opacity: 1
+				transform: rotateY(0deg)
+.input-con
+	position: relative
+	.error, img
+		position: absolute
+		bottom: 10px
+		right: 0px
+		z-index: 999
+		img
+			bottom: 0px
+
+@media (max-width: 351px)
+	.login-content
+		.login-box
+			min-width: 100%
+			.login-form, .forget-form
+				width: 100%

@@ -1,0 +1,200 @@
+/* table colors */
+.table-1
+	color: #0B9A49
+.table-2
+	color: #dcdefc
+.table-3
+	color: #cff1f0
+.table-4
+	color: #ebdcdc
+.table-5
+	color: #e9daf6
+
+.scroll-wrapper
+	width: 100%
+	overflow: scroll
+	display: table
+	box-sizing: border-box
+	.scroll-row
+		display: table-row
+		overflow: scroll
+		.scroll-col
+			max-width: 400px
+			display: table-cell
+			float: none
+			min-width: 400px
+.table-responsive
+	color: $black
+	a
+		color: $black
+.table
+	font-size: 13px
+	margin-bottom: 5px
+	border: 1px solid
+	border-color: $border
+	background: $white
+
+	td
+		padding: 10px !important
+		vertical-align: middle
+		position: relative
+		border-top: 1px solid $border
+		cursor: move
+		font-size: $font-s
+		.form-checkbox
+			position: absolute
+			top: 20px
+			left: 8px
+	.table-check
+		width: 40px !important
+		padding-top: 10px
+	.sorting
+		padding-right: 20px !important
+	.table-th
+		width: 20px !important
+		overflow: hidden
+		&:after
+			display: none
+			
+	th
+		position: relative
+		border-top: 0px
+		padding-left: 5px
+		border-bottom: 0px !important
+		font-size: $font-s
+		font-weight: $font-bold
+		min-height: 40px
+		.table-check
+			width: 40px !important
+			padding-top: 10px	
+		.form-checkbox
+			position: absolute
+			top: 8px !important
+		a
+			padding-left: 10px
+	tbody
+		width: 100%
+		display: block
+		overflow: auto
+		td a
+			padding-left: 30px
+	thead, tbody tr
+		display: table
+		width: 100% 
+		table-layout: fixed
+		min-height: 30px
+	.tfoot-head
+		text-align: right
+		font-weight: $font-bold
+		a
+			color: $blue
+			padding: $p-5
+			margin: $m-0 $m-5
+			margin-bottom: $m-5
+			float: left
+			@include border-radius(3px)
+			border: 1px solid
+			border-color: $blue
+			background: transparent
+			font-weight: $font-regular
+			&:hover
+				background: $blue
+				color: $white
+				border-color: $blue
+	.mapped
+		height: 150px
+		overflow: auto
+.t-check
+	width: 40px !important
+	padding-top: $p-10
+	overflow: hidden
+	&:after
+		display: none
+.pagination
+	li
+		a
+			color: $black
+			&:hover
+				background: $blue
+				color: $white
+	li.active
+		a
+			color: $gray
+			background: $light-bg
+			border-color: $border
+			
+	li:focus
+		a
+			color: $gray
+			background: $light-bg	
+
+.dataTables_filter
+	float: right
+	margin-bottom: $m-0 !important
+	label
+		margin-bottom: $m-0 !important
+
+.dataTables_length
+	label
+		margin-bottom: $m-0 !important
+
+/* Compare table */
+.compare-table
+	min-height: 400px
+	max-height: 400px
+	overflow-y: scroll	 
+	.compare-td
+		height: 400px
+		line-height: 400px
+		font-weight: $font-bold
+		background: $light-bg
+
+
+/* Column lookup */
+.lookup
+	border: 1px solid
+	border-color: $border
+	padding: $p-10
+	h3
+		margin-top: $m-10
+	.option
+		position: absolute
+		top: 15px
+		right: 20px
+
+/* color options */
+.color-options
+	display: inline-block
+	a
+		color: $gray
+		padding-left: $p-5
+
+/* Custom table */
+.custom-table
+	td
+		cursor: pointer
+	.table-btn
+		max-width: 50px
+		color: $black
+		vertical-align: middle
+		a
+			padding-left: 0
+			i
+				font-size: $font-m
+				color: $black
+
+.thead-name
+	position: relative
+	vertical-align: middle
+	float: left
+.sort
+	display: inline-block
+	width: 10px
+	height: auto
+	a
+		display: block
+		float: left
+		height: 6px
+		padding-left: 0px
+		i
+			float: left

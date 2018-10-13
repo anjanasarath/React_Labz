@@ -1,0 +1,54 @@
+/* Conenctors */
+.connector-grid
+	@extend .wd-100
+	.connectors
+		width: 20%
+		float: left
+		padding-right: 5px
+		margin-bottom: $m-5
+		img
+			width: 100%
+
+/* Navigation Bullet */
+.nav-dots
+	@extend .wd-100
+	a
+		display: inline-block
+		svg
+			float: left
+			fill: $gray
+			color: $gray
+			height: 12px
+		&:hover svg
+			fill: $blue
+			color: $blue
+
+/* Card Tabs */
+.card-tabs
+	@extend .wd-100
+	.card-tab-header
+		@extend .wd-100
+		margin-bottom: $m-15
+		a
+			float: left
+			width: 25%
+			text-align: center
+			color: $gray
+			border-bottom: 4px solid
+			border-color: transparent
+			padding-bottom: $p-10
+			&:hover, &:active
+				color: $black
+				border-color: $green
+			svg
+				display: inline-block
+				text-align: center
+			span
+				display: block
+		.active
+			color: $black
+			border-color: $green
+
+	.card-tab-body
+		@extend .wd-100
+
