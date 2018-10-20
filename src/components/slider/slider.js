@@ -3,7 +3,6 @@ import Image from '../../assets/img/chart.png';
 
 const ContentSlider = (props) =>{
     return (
-
         <div className="card">
             <div className="card-title">{props.cardName}</div>
             <div className="card-content">{props.description}</div>

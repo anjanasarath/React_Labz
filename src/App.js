@@ -1,33 +1,51 @@
 import React, { Component } from 'react';
-// import Accordion from './components/accordion';
-// import RangeSlider from './components/rangeslider';
-// import Input from './components/form/Input';
-import Slider from './components/slider';
+import RadioGroup from './components/drawer/radio';
+import Drawer from './components/drawer';
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentCount: 0
+            position: 'left',
+            visible: false
         }
-        this.handleCurrentCountChange = this.handleCurrentCountChange.bind(this);
     }
-    handleCurrentCountChange(e) {
-        this.setState({ currentCount: e.target.value }, () => console.log('Count', this.state.currentCount));
+
+    showDrawer = () => {
+      this.setState({
+        visible:true
+      });
     }
+
+    onChange = (event) => {
+      this.setState({
+        position:event.target.value,
+        visible: false
+      });
+    }
+
+    onClose = (event) => {
+      this.setState({
+        visible: false
+      });
+    }
+
     render() {
         return (
-            <div>
-                    {/* <Accordion/>
-                    <RangeSlider />
-                    <Input
-                        inputType={'number'}
-                        title={'Count'}
-                        name={'count'}
-                        controlFunc={this.handleCurrentCountChange}
-                        content={this.state.currentCount}
-                        placeholder={'Count'} /> */}
-                    <Slider/>             
+            <div className="row">
+              <RadioGroup
+                position={this.state.position}
+                onChange={this.onChange}
+                isButtonClicked={this.showDrawer}/>
+              {this.state.visible &&
+              <Drawer
+                position={this.state.position}
+                onClose={this.onClose}>
+              <h1 className="h1">This is a crazy world!</h1>
+              <h2 className="h1">This is a crazy world!</h2>
+              <h3 className="h1">This is a crazy world!</h3>
+              </Drawer>
+            }
             </div>
         );
     }
